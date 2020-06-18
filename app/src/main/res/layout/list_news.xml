@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/small_layout_margin"
+        android:paddingEnd="@dimen/small_layout_margin">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/layout_margin"
+            android:textSize="@dimen/text_size"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/roboto"
+            tools:text="IDAO 2020"/>
+
+        <TextView
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin"
+            android:layout_marginStart="@dimen/small_layout_margin"
+            android:layout_marginEnd="@dimen/small_layout_margin"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/roboto"
+            tools:text=" Dear participants,\n\nWe are delighted to announce that IDAO 2020 starts on January 15, 2020.\n\nWhat is next? Now all teams are able to join contest via[ ++IDAO platform++](https://register.idao.world/#/auth). When inside the platform, click “Contest” button and choose “Join a contest” option to access the competition. All teams MUST join the contest until January 21, so within this time new teams are able to join. If a team has already joined the contest, it can not change team members.  \n\nAfter your team joins the competition, it will receive Yandex.Contest login and password via email. This email will also contain the link to the Online Task. Please notice that the Task will be open at 12-00 (UTC +3) on January 15, 2020.\n\nSome important notes:\n\n1.    This year all teams MUST consist of 2 or 3 members. If you struggle to find teammates, you can find them via our Telegram chat -[ ++https://t.me/IDAOworld++](https://t.me/IDAOworld) .\n\n2.    After January 21 there WON’T be possibilities to change teams or create new once.\n\n3.    If you face any problems or technical issues, please feel free to contact us: hello@idao.world\n\n4. Employees of companies that provide tasks for IDAO 2020 can only participate hors concours. In 2020 year these organizations are Russian Astronomical Science Center (ASC), the Laboratory of Methods for Big Data Analysis (LAMBDA, HSE University) and QIWI Russia.   \n"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/layout_margin"
+                android:id="@+id/author"
+                android:textSize="@dimen/small_text_size"
+                android:textColor="@color/primary"
+                tools:text="skareptyan"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="220dp"
+                android:layout_marginEnd="@dimen/layout_margin"
+                android:textSize="@dimen/small_text_size"
+                android:id="@+id/date"
+                android:textColor="@color/primary"
+                tools:text="2020-01-14"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
