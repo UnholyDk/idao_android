@@ -23,14 +23,14 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/header1"
+                    android:id="@+id/header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="@string/title"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
                 <TextView
-                    android:id="@+id/date1"
+                    android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -39,7 +39,7 @@
                     android:textColor="@color/primary"
                     />
                 <TextView
-                    android:id="@+id/body1"
+                    android:id="@+id/body"
                     android:autoLink="web"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -48,7 +48,6 @@
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
                     />
-
             </LinearLayout>
 
         </LinearLayout>

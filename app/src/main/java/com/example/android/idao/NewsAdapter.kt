@@ -27,13 +27,13 @@ class NewsAdapter(private val data: List<News>): RecyclerView.Adapter<NewsAdapte
         holder.header.text = item.header
         holder.body.text = item.body
         holder.date.text = item.date
-        holder.author.text = item.authorId.toString()
+        //holder.author.text = item.authorId.toString()
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val header: TextView = itemView.findViewById(R.id.header)
         val body: TextView = itemView.findViewById(R.id.body)
         val date: TextView = itemView.findViewById(R.id.date)
-        val author: TextView = itemView.findViewById(R.id.author)
+        //val author: TextView = itemView.findViewById(R.id.author)
     }
 }
