@@ -40,11 +40,14 @@
         android:id="@+id/newsFragment"
         android:name="com.example.android.idao.NewsFragment"
         android:label="fragment_news"
-        tools:layout="@layout/fragment_news" >
+        tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.android.idao.ProfileFragment"
+        android:label="ProfileFragment" >
         <action
-            android:id="@+id/action_newsFragment_to_titleFragment"
+            android:id="@+id/action_profileFragment_to_titleFragment"
             app:destination="@id/titleFragment"
-            app:popUpTo="@id/titleFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/titleFragment" />
     </fragment>
 </navigation>

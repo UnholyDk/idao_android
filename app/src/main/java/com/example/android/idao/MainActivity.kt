@@ -18,13 +18,22 @@ package com.example.android.idao
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.android.idao.databinding.ActivityMainBinding
+import com.example.android.idao.databinding.ForBottomBinding
+import com.example.android.idao.databinding.FragmentNewsBinding
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.for_bottom.*
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         @Suppress("UNUSED_VARIABLE")
@@ -32,7 +41,41 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
         Log.i("MainActivity", "setupActionBar called")
+
+//        binding.NAVIGATION.setOnNavigationItemSelectedListener {
+//            when (it.itemId) {
+//                R.id.page_1 -> {
+//                    title = "News"
+//                    loadFragment(NewsFragment())
+//                    return@setOnNavigationItemSelectedListener true
+//                }
+//                R.id.page_2->{
+//                    title = "Teams"
+//                    return@setOnNavigationItemSelectedListener true
+//                }
+//                R.id.page_3->{
+//                    return@setOnNavigationItemSelectedListener true
+//                }
+//                R.id.page_4->{
+//                    loadFragment(ProfileFragment())
+//                    return@setOnNavigationItemSelectedListener true
+//                }
+//            }
+//            false
+//        }
+
+        //val bottom = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        //val tmp = FragmentNewsBinding.
+        //println(bottom)
+        //bottom.setOnNavigationItemSelectedListener(nav)
     }
+
+//    private fun loadFragment(fragment: Fragment) {
+//        val tr = supportFragmentManager.beginTransaction()
+//        tr.replace(R.id.CONTAINER, fragment)
+//        tr.addToBackStack(null)
+//        tr.commit()
+//    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)

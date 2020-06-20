@@ -22,12 +22,32 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.android.idao.databinding.FragmentTitleBinding
+import com.example.android.idao.network.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class TitleFragment : Fragment() {
+
+    private var answer: DataForApi? = null
+
+    private fun postAuth(dataPerson: UserInfo) {
+        IdaoApi.retrofitService.authorization(dataPerson).enqueue( object: Callback<DataForApi> {
+            override fun onFailure(call: Call<DataForApi>, t: Throwable) {
+                Toast.makeText(context, "Failure: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+            override fun onResponse(call: Call<DataForApi>, response: Response<DataForApi>) {
+                println("Access")
+                answer = response.body()
+            }
+        })
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding: FragmentTitleBinding = DataBindingUtil.inflate(
@@ -43,9 +63,28 @@ class TitleFragment : Fragment() {
                 Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_secretFragment)
         )
 
-        binding.logIn.setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_newsFragment)
-        )
+        binding.logIn.setOnClickListener { view->
+            val username = binding.login.text.toString()
+            val password = binding.password.text.toString()
+            when {
+                username.isEmpty() -> {
+                    Toast.makeText(context, "Entered your username", Toast.LENGTH_SHORT).show()
+                }
+                password.isEmpty() -> {
+                    Toast.makeText(context, "Entered your password", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    postAuth(UserInfo(username, password))
+                    if (answer == null) {
+                        Toast.makeText(context, "Wrong username or password", Toast.LENGTH_SHORT).show()
+                    } else {
+                        //Toast.makeText(context, answer!!.accessToken, Toast.LENGTH_SHORT).show()
+                        Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_newsFragment)
+                    }
+                    //Navigation.findNavController(view).navigate(R.id.action_titleFragment_to_newsFragment)
+                }
+            }
+        }
         return binding.root
     }
 }

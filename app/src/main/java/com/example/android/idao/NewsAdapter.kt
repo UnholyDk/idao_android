@@ -23,7 +23,7 @@ class NewsAdapter(private val data: List<News>): RecyclerView.Adapter<NewsAdapte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
-        val res = holder.itemView.context.resources
+        // val res = holder.itemView.context.resources
         holder.header.text = item.header
         holder.body.text = item.body
         holder.date.text = item.date
