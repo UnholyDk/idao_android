@@ -9,9 +9,10 @@
     <RelativeLayout
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/person_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -28,37 +29,76 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Niyaz Khabibulin"
+                    android:text="@string/niyaz_khabibulin"
                     android:textAppearance="?attr/textAppearanceHeadline6"
-                    />
+                    android:textSize="@dimen/size_25" />
+
                 <TextView
                     android:id="@+id/nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:layout_gravity="center_horizontal"
-                    android:text="\@unhollydk"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/unhollydk"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="@color/primaryBlue"
-                    />
+                    android:textSize="@dimen/text_size" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center_horizontal">
+                    android:layout_marginTop="@dimen/layout_margin"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/exit"
+                    <ImageButton
+                        android:id="@+id/facebook"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:text="Exit" />
-                </LinearLayout>
-            </LinearLayout>
+                        android:layout_marginStart="@dimen/big_layout_margin"
+                        android:contentDescription="@string/facebook"
+                        android:src="@drawable/facebook"
+                        android:backgroundTint="#FFFFFF"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
+                    <ImageButton
+                        android:id="@+id/vk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/vk"
+                        android:gravity="center"
+                        android:src="@drawable/vk"
+                        android:backgroundTint="#FFFFFF"
+                        app:layout_constraintEnd_toStartOf="@+id/email"
+                        app:layout_constraintStart_toEndOf="@+id/facebook"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/big_layout_margin"
+                        android:contentDescription="@string/email"
+                        android:gravity="end"
+                        android:backgroundTint="#FFFFFF"
+                        android:src="@drawable/email"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_navigation4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/cool_red"
+            android:text="@string/logout" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation4"
