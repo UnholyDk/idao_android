@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+    </data>
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,32 +24,50 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="@string/title"
+                    android:text="The dead will not hurt"
+                    android:layout_gravity="center"
                     android:textAppearance="?attr/textAppearanceHeadline6"
                     />
                 <TextView
-                    android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    tools:text="2020-02-04"
+                    android:layout_gravity="center"
+                    android:text="@string/niyaz_khabibulin"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="@color/primary"
                     />
                 <TextView
-                    android:id="@+id/body"
-                    android:autoLink="web"
-                    android:linksClickable="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:textColorLink="@color/primaryBlue"
-                    tools:text="@string/my_bio"
+                    android:layout_gravity="center"
+                    android:text="@string/supporting_text"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary"
+                    />
+
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/delete"
+                    style="?attr/borderlessButtonStyle"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit"
+                    style="?attr/borderlessButtonStyle"
                     />
             </LinearLayout>
 

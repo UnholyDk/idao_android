@@ -17,15 +17,32 @@ class ProfileFragment : Fragment() {
         val binding: FragmentProfileBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_profile, container, false)
 
-        val contoller = findNavController()
+        binding.bottomNavigation4.selectedItemId = R.id.page_4
+
+        val navController = findNavController()
 
         binding.exit.setOnClickListener {
-            var fr = fragmentManager?.beginTransaction()
-            fr?.replace(R.id.title_id, ProfileFragment())
-            //fr?.replace(R.id.profileFragment, ProfileFragment())
-            fr?.commit()
+            navController.navigate(R.id.action_profileFragment_to_titleFragment)
         }
 
+        binding.bottomNavigation4.setOnNavigationItemSelectedListener { item->
+            when(item.itemId) {
+                R.id.page_1->{
+                    navController.navigate(R.id.action_profileFragment_to_newsFragment)
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.page_2->{
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.page_3->{
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.page_4->{
+                    return@setOnNavigationItemSelectedListener true
+                }
+            }
+            false
+        }
         return binding.root
     }
 }

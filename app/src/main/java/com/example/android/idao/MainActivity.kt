@@ -20,17 +20,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.android.idao.databinding.ActivityMainBinding
-import com.example.android.idao.databinding.ForBottomBinding
-import com.example.android.idao.databinding.FragmentNewsBinding
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.for_bottom.*
 
 class MainActivity : AppCompatActivity() {
 

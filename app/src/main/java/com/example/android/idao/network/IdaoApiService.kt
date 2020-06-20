@@ -10,7 +10,6 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST
-import okhttp3.Call as Call1
 
 private const val BASE_URL = "https://api.idao.world/api/"
 

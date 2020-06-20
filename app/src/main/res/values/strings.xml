@@ -41,5 +41,8 @@
     <string name="teams">Teams</string>
     <string name="contests">Contests</string>
     <string name="profile">Profile</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="niyaz_khabibulin">Niyaz Khabibulin</string>
 
 </resources>

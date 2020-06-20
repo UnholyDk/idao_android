@@ -1,52 +1,44 @@
 package com.example.android.idao
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import androidx.loader.app.LoaderManager
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.android.idao.databinding.FragmentNewsBinding
-import com.example.android.idao.databinding.ForBottomBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class NewsFragment : Fragment() {
-
-    private val nav = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when(item.itemId) {
-            R.id.page_1->{
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.page_2->{
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.page_3->{
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.page_4->{
-
-                return@OnNavigationItemSelectedListener true
-            }
-        }
-        false
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding: FragmentNewsBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_news, container, false)
 
-        val bind: ForBottomBinding = DataBindingUtil.inflate(
-                inflater, R.layout.for_bottom, container, false)
+        binding.bottomNavigation1.selectedItemId = R.id.page_1
 
         val navController = findNavController()
 
+        binding.bottomNavigation1.setOnNavigationItemSelectedListener { item->
+            when(item.itemId) {
+                R.id.page_1->{
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.page_2->{
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.page_3->{
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.page_4->{
+                    navController.navigate(R.id.action_newsFragment_to_profileFragment)
+                    return@setOnNavigationItemSelectedListener true
+                }
+            }
+            false
+        }
 
         val tmp: List<News> = listOf(
                 News("IDAO 2020", " [++HSE Faculty of Computer Science++](https://cs.hse.ru/en/) and Yandex launch registration for the 3rd International Data Analysis Olympiad ([++IDAO 2020++](https://idao.world/)). The platinum partner of IDAO 2020 is Qiwi. \n\nThe Olympiad includes two stages:\n\n**Online Stage:**\n\n- Traditional machine learning competition on Yandex.Contest platform. You will need to make new predictions and upload them to the automatic verification system.\n- Track 2: Come up with a solution for the same problem, keeping within a rigid framework of time and memory used.\n\n**Offline Stage (Final):**\n\n- The top 30 teams according to the Online Stage results will be invited to the on-site final, which will be held on April 2-5 in Yandex office, Moscow .\n- In the final 36 hours of the competition, participants will try not just to train the model, but to create a full-fledged prototype, which will be tested both in terms of accuracy and performance. \n\nAs part of IDAO Final, performances and master classes of world experts in machine learning and data analysis are also planned.\n\nIn 2019, 2187 participants from 78 countries took part in IDAO, and 79 participants from 7 countries met in the final in Moscow. \n\nWinners and prize-winners of IDAO 2020 will receive valuable prizes and gifts, as well as an advantage in entering Yandex School of Data Analysis and master's programmes at the HSE Faculty of Computer Science.\n",
