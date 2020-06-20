@@ -1,5 +1,7 @@
 package com.example.android.idao
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,6 +25,24 @@ class ProfileFragment : Fragment() {
 
         binding.exit.setOnClickListener {
             navController.navigate(R.id.action_profileFragment_to_titleFragment)
+        }
+
+        binding.vk.setOnClickListener {
+            val browserIntent: Intent = Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://vk.com/public173225079/"))
+            startActivity(browserIntent)
+        }
+
+        binding.facebook.setOnClickListener {
+            val browserIntent: Intent = Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://www.facebook.com/IntDataAnalysisOlympiad/"))
+            startActivity(browserIntent)
+        }
+
+        binding.email.setOnClickListener {
+            val browserIntent: Intent = Intent(Intent.ACTION_SENDTO,
+                    Uri.fromParts("mailto", "hello@idao.world", null))
+            startActivity(Intent.createChooser(browserIntent, "Send email..."))
         }
 
         binding.bottomNavigation4.setOnNavigationItemSelectedListener { item->

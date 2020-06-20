@@ -14,7 +14,7 @@
     <dimen name="text_size">20sp</dimen>
     <dimen name="small_padding">8dp</dimen>
     <dimen name="layout_margin">16dp</dimen>
-    <dimen name="big_layout_margin">90dp</dimen>
+    <dimen name="big_layout_margin">25dp</dimen>
     <dimen name="small_layout_margin">6dp</dimen>
     <dimen name="big_text_size">40sp</dimen>
     <dimen name="middle_text_size">30sp</dimen>
