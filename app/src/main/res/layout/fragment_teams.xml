@@ -14,17 +14,67 @@
         tools:context=".TeamsFragment">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listNews"
+            android:id="@+id/listTeams"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/bottom_navigation2"
             app:layoutManager="LinearLayoutManager" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/layout_margin"
+            android:layout_below="@+id/listTeams" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/your_invites"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/you_not_have_invites"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tg_chat"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textSize="@dimen/text_size"
+                    android:textColor="@color/primaryBlue"
+                    android:autoLink="web"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/smt_end"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:menu="@menu/bottom_navigation_menu" />
+            app:menu="@menu/bottom_navigation_menu"
+            app:labelVisibilityMode="labeled"/>
     </RelativeLayout>
 </layout>

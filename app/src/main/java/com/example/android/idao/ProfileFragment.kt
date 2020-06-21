@@ -45,6 +45,12 @@ class ProfileFragment : Fragment() {
             startActivity(Intent.createChooser(browserIntent, "Send email..."))
         }
 
+        binding.aboutIdao.setOnClickListener {
+            val browserIntent: Intent = Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://idao.world/"))
+            startActivity(browserIntent)
+        }
+
         binding.bottomNavigation4.setOnNavigationItemSelectedListener { item->
             when(item.itemId) {
                 R.id.page_1->{
@@ -52,9 +58,11 @@ class ProfileFragment : Fragment() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.page_2->{
+                    navController.navigate(R.id.action_profileFragment_to_teamsFragment)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.page_3->{
+                    navController.navigate(R.id.action_profileFragment_to_contestsFragment)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.page_4->{

@@ -34,4 +34,14 @@
     <string name="vk">vk</string>
     <string name="email">email</string>
     <string name="facebook">facebook</string>
+    <string name="about_idao">About Idao</string>
+    <string name="available_contests">Available contests</string>
+    <string name="the_new_contest_is_coming_nall_users_will_be_informed_when_it_s_open">The new contest is coming.\nAll users will be informed when it\'s open.</string>
+    <string name="joined_contests">Joined contests</string>
+    <string name="unkwown">unkwown</string>
+    <string name="your_invites">Your invites</string>
+    <string name="you_not_have_invites">You have no invites.\nBut do not worry, you are never alone =)
+    \n\nIf you struggle to find a teammate, please join IDAO telegram chat</string>
+    <string name="tg_chat">https://t.me/IDAOworld</string>
+    <string name="smt_end">and find your future ML friends over there.</string>
 </resources>

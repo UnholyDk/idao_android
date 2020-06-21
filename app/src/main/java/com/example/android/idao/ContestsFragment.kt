@@ -25,6 +25,28 @@ class ContestsFragment : Fragment() {
         binding.bottomNavigation3.selectedItemId = R.id.page_3
 
         val navController = findNavController()
+
+        binding.bottomNavigation3.setOnNavigationItemSelectedListener { item->
+            when(item.itemId) {
+                R.id.page_1->{
+                    navController.navigate(R.id.action_contestsFragment_to_newsFragment)
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.page_2->{
+                    navController.navigate(R.id.action_contestsFragment_to_teamsFragment)
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.page_3->{
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.page_4->{
+                    navController.navigate(R.id.action_contestsFragment_to_profileFragment)
+                    return@setOnNavigationItemSelectedListener true
+                }
+            }
+            false
+        }
+
         return binding.root
     }
 }

@@ -36,41 +36,7 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
         Log.i("MainActivity", "setupActionBar called")
-
-//        binding.NAVIGATION.setOnNavigationItemSelectedListener {
-//            when (it.itemId) {
-//                R.id.page_1 -> {
-//                    title = "News"
-//                    loadFragment(NewsFragment())
-//                    return@setOnNavigationItemSelectedListener true
-//                }
-//                R.id.page_2->{
-//                    title = "Teams"
-//                    return@setOnNavigationItemSelectedListener true
-//                }
-//                R.id.page_3->{
-//                    return@setOnNavigationItemSelectedListener true
-//                }
-//                R.id.page_4->{
-//                    loadFragment(ProfileFragment())
-//                    return@setOnNavigationItemSelectedListener true
-//                }
-//            }
-//            false
-//        }
-
-        //val bottom = findViewById<BottomNavigationView>(R.id.bottomNavigation)
-        //val tmp = FragmentNewsBinding.
-        //println(bottom)
-        //bottom.setOnNavigationItemSelectedListener(nav)
     }
-
-//    private fun loadFragment(fragment: Fragment) {
-//        val tr = supportFragmentManager.beginTransaction()
-//        tr.replace(R.id.CONTAINER, fragment)
-//        tr.addToBackStack(null)
-//        tr.commit()
-//    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)

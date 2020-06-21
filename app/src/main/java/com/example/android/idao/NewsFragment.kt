@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.android.idao.databinding.FragmentNewsBinding
+import kotlinx.android.synthetic.main.fragment_title.*
 
 
 class NewsFragment : Fragment() {
@@ -16,6 +17,8 @@ class NewsFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding: FragmentNewsBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_news, container, false)
+
+
 
         binding.bottomNavigation1.selectedItemId = R.id.page_1
 
@@ -27,9 +30,11 @@ class NewsFragment : Fragment() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.page_2->{
+                    navController.navigate(R.id.action_newsFragment_to_teamsFragment)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.page_3->{
+                    navController.navigate(R.id.action_newsFragment_to_contestsFragment)
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.page_4->{
