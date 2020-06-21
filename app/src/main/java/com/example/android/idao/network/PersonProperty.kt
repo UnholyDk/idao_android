@@ -13,3 +13,5 @@ data class HeadersIdao(val appToken: String, val authorization: String)
 
 data class DataForApi(@field:Json(name = "accessToken") val accessToken: String,
                       @field:Json(name = "tokenType") val tokenType: String)
+
+data class Team(val nameTeam: String, val members: List<PersonProperty>)

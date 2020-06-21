@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
+import com.example.android.idao.adapters.TeamsAdapter
 import com.example.android.idao.databinding.FragmentTeamsBinding
+import com.example.android.idao.network.PersonProperty
+import com.example.android.idao.network.Team
 
 /**
  * A simple [Fragment] subclass.
@@ -46,6 +49,16 @@ class TeamsFragment : Fragment() {
             }
             false
         }
+
+        val niyaz_lead = PersonProperty(0, "Niyaz Khabibulin", "@unhollydk")
+        val niyaz = PersonProperty(1, "Niyaz Khabibulin", "@unhollydk")
+        val ivan_lead = PersonProperty(0, "Ivan Lebedev", "@Gudleyd")
+        val a = Team("The dead will not hurt", listOf(niyaz_lead))
+        val b = Team("wrussia shitww", listOf(niyaz_lead))
+        val c = Team("ANTIHYPE", listOf(ivan_lead, niyaz))
+
+        binding.listTeams.adapter = TeamsAdapter(listOf(a, b, c))
+
         return binding.root
     }
 }
