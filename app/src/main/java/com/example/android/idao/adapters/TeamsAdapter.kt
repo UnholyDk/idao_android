@@ -1,16 +1,21 @@
 package com.example.android.idao.adapters
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.idao.MainActivity
 import com.example.android.idao.NewsAdapter
 import com.example.android.idao.R
 import com.example.android.idao.network.Team
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
+import kotlinx.android.synthetic.main.fragment_profile.view.*
 
-class TeamsAdapter(private val data: List<Team>): RecyclerView.Adapter<TeamsAdapter.ViewHolder>() {
+class TeamsAdapter(private var data: List<Team>): RecyclerView.Adapter<TeamsAdapter.ViewHolder>() {
 
     override fun getItemCount() = data.size
 
@@ -50,6 +55,13 @@ class TeamsAdapter(private val data: List<Team>): RecyclerView.Adapter<TeamsAdap
             holder.username3.text = item.members[2].username
             holder.member3.visibility = View.VISIBLE
         }
+
+        holder.delete.setOnClickListener {
+            data = data.minusElement(data[position])
+            notifyItemRemoved(position)
+        }
+        
+
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -68,6 +80,9 @@ class TeamsAdapter(private val data: List<Team>): RecyclerView.Adapter<TeamsAdap
         val name3 : TextView = itemView.findViewById(R.id.member_name3)
         val username3: TextView = itemView.findViewById(R.id.member_username3)
         val leader3: TextView = itemView.findViewById(R.id.is_leader3)
+
+        val delete: MaterialButton = itemView.findViewById(R.id.DELETE)
+        val edit: MaterialButton = itemView.findViewById(R.id.EDIT)
     }
 }
 

@@ -26,7 +26,6 @@ private val retrofit = Retrofit.Builder()
         .build()
 
 interface IdaoApiService {
-    @Headers("Accept: application/vnd.github.v3.full+json", "User-Agent: Retrofit-Sample-App")
     @GET("accounts")
     fun getAccounts() : Call<List<PersonProperty>>
 
@@ -35,6 +34,7 @@ interface IdaoApiService {
 
     @POST("auth/login")
     fun authorization(@Body userData: UserInfo) : Deferred<DataForApi>
+    
 }
 
 object IdaoApi {

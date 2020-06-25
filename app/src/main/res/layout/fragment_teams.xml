@@ -82,6 +82,23 @@
         </LinearLayout>
         </ScrollView>
 
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Main content -->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/about"
+            app:srcCompat="@drawable/plus_24" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation2"
             android:layout_width="match_parent"

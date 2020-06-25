@@ -1,10 +1,12 @@
 package com.example.android.idao
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.android.idao.adapters.TeamsAdapter
@@ -54,11 +56,22 @@ class TeamsFragment : Fragment() {
         val niyaz = PersonProperty(1, "Niyaz Khabibulin", "@unhollydk")
         val ivan_lead = PersonProperty(0, "Ivan Lebedev", "@Gudleyd")
         val a = Team("The dead will not hurt", listOf(niyaz_lead))
-        val b = Team("wrussia shitww", listOf(niyaz_lead))
+        val b = Team("Test team", listOf(niyaz_lead))
         val c = Team("ANTIHYPE", listOf(ivan_lead, niyaz))
 
         binding.listTeams.adapter = TeamsAdapter(listOf(a, b, c))
 
+        binding.floatingActionButton.setOnClickListener {
+            val builder = AlertDialog.Builder(activity)
+            val inflater = layoutInflater
+            val dialogLayout = inflater.inflate(R.layout.dialog_new_team, null)
+            val editText  = dialogLayout.findViewById<EditText>(R.id.naem_tema)
+            builder.setView(dialogLayout)
+            builder.setPositiveButton("Next") { _, _ ->
+                binding.listTeams.adapter = TeamsAdapter(listOf(Team(editText.text.toString(), listOf(niyaz_lead)), a, b, c))
+            }
+            builder.show()
+        }
         return binding.root
     }
 }
